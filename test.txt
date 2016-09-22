@@ -1,0 +1,1 @@
+This is a reminder of how to use vim and git
