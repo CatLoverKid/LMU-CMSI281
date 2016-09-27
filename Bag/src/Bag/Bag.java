@@ -1,4 +1,3 @@
-package javaapplication1;
 import java.io.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
