@@ -1,4 +1,3 @@
-package javaapplication1;
 import java.io.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -94,5 +93,4 @@ class Bag implements Collectible {
             System.out.format("%s %d\n", node.item, node.count);
         }
     }
-
 }

@@ -1,4 +1,3 @@
-package javaapplication1;
 interface Collectible {
     boolean isEmpty();
     int size();
