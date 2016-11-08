@@ -19,7 +19,7 @@ public class CircularLinkedList extends AbstractLinkedList implements CircularCo
 
     public void add(String s) {
 	Node newNode = new Node(first,s);
-	first = newNode();
+	first = newNode;
         n ++;
     }
 
