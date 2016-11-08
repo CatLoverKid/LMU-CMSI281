@@ -1,30 +1,28 @@
-public class CircularLinkedList extends AbstractLinkedList implements CircularCollectible {
+public class CircularArrayList extends AbstractArrayList implements CircularCollectible {
 
-    public CircularLinkedList() {
+    public CircularArrayList() {
         super();
     }
 
-    public CircularLinkedList(String[] elements) {
+    public CircularArrayList(String[] elements) {
         super(elements);
     }
 
 
     public boolean isEmpty() {
-        return n == 0;
+        throw new UnsupportedOperationException();
     }
 
     public int size() {
-        return n;
+        throw new UnsupportedOperationException();
     }
 
     public void add(String s) {
-	Node newNode = new Node(first,s);
-	first = newNode();
-        n ++;
+        throw new UnsupportedOperationException();
     }
-
+    
     public String first() {
-        return first.value;
+      return elements[0];
     }
 
     /** remove(String s):
@@ -46,22 +44,21 @@ public class CircularLinkedList extends AbstractLinkedList implements CircularCo
     }
 
     public CircularIterator iterator() {
-        return new CircularLinkedListIterator();
+        return new CircularArrayListIterator();
     }
 
-    class CircularLinkedListIterator implements CircularIterator {
+    class CircularArrayListIterator implements CircularIterator {
+
+        public CircularArrayListIterator() {
+            throw new UnsupportedOperationException();
+        }
         
-        public CircularLinkedListIterator() {
-            super();
-        }
-
         public boolean hasNext() {
-            return next != null;
+            throw new UnsupportedOperationException();
         }
 
-        public Node next() {
-            next = next.next;
-	    return next;
+        public String next() {
+            throw new UnsupportedOperationException();
         }
 
         /** remove():
@@ -70,7 +67,7 @@ public class CircularLinkedList extends AbstractLinkedList implements CircularCo
          *  most recent call to next())
          */
         public void remove() {
-            
+            throw new UnsupportedOperationException();
         }
 
         /** removeKth(int k):
@@ -84,8 +81,8 @@ public class CircularLinkedList extends AbstractLinkedList implements CircularCo
         }
 
         public boolean oneElementLeft() {
-            return n == 1;
+            throw new UnsupportedOperationException();
         }
     }
-}
 
+}
