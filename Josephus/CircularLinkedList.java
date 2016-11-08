@@ -70,7 +70,11 @@ public class CircularLinkedList extends AbstractLinkedList implements CircularCo
          *  most recent call to next())
          */
         public void remove() {
-            
+            if(next != null){
+	      next = next.next;
+	    }else{
+	      next = null;
+	    }
         }
 
         /** removeKth(int k):
@@ -80,8 +84,14 @@ public class CircularLinkedList extends AbstractLinkedList implements CircularCo
          *  (i.e. kthNode.next)
          */
         public void removeKthElement(int k) {
-            throw new UnsupportedOperationException();
-        }
+            if(!oneElementLeft()){
+                for(int i = 0; i < k; i++){
+                    next();
+                }
+                remove();
+                next();
+            }
+	}
 
         public boolean oneElementLeft() {
             return n == 1;
