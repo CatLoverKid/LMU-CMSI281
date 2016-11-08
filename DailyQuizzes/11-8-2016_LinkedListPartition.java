@@ -1,4 +1,4 @@
-public class LinkedListPartition{
+public class 11-8-2016_LinkedListPartition{
   public LinkedList partitionList(Node partitionValue){
     LinkedList tempList = new LinkedList()
     partitionNode.nest = first;
