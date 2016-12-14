@@ -1,10 +1,19 @@
 public class Node{
   private int nodeData;
-  private boolean nodeColor = false; //Black is False, Red is True
+  private boolean nodeColor;
   private Node leftNode;
   private Node rightNode;
+  private Node parentNode;
 
 
+
+public void Node(Node parentInput,int dataInput){
+  nodeData = dataInput;
+  leftNode = null;
+  rightNode = null;
+  nodeColor = false;				//Black is False
+  nodeParent = parentInput;
+}
 
   public int getNodeData(){
     return nodeData;
@@ -22,6 +31,10 @@ public class Node{
     return rightNode;
   }
 
+  public Node getParentNode(){
+    return parentNode;
+  }
+
   public void setLeftNode(Node inputLeftNode){
     leftNode = inputLeftNode;
   }
@@ -37,6 +50,4 @@ public class Node{
   public void setData(int inputData){
     nodeData = inputData;
   }
-
-
 }
