@@ -12,7 +12,7 @@ public void Node(Node parentInput,int dataInput){
   leftNode = null;
   rightNode = null;
   nodeColor = false;				//Black is False
-  nodeParent = parentInput;
+  parentNode = parentInput;
 }
 
   public int getNodeData(){
@@ -43,11 +43,21 @@ public void Node(Node parentInput,int dataInput){
     rightNode = inputRightNode;
   }
 
-  public void setColor(boolean inputColor){
+  public void setNodeColor(boolean inputColor){
     nodeColor = inputColor;
   }
 
-  public void setData(int inputData){
+  public void setNodeData(int inputData){
     nodeData = inputData;
+  }
+  
+  public Node getSiblingNode(){
+	  if(parentNode.getRightNode() == this){
+		  return parentNode.getLeftNode();
+	  }else if(parentNode.getLeftNode() == this){
+		  return parentNode.getRightNode();
+	  }else{
+		  return null;
+	  }
   }
 }
