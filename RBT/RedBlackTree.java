@@ -1,8 +1,6 @@
-import java.util.Comparator;
 public class RedBlackTree{
 
     private Node root = null;
-	private Comparator comparator;
 
     public void RedBlackTree(){
       root = new Node();
@@ -14,11 +12,11 @@ public class RedBlackTree{
         root = new Node();
       }
       Node referenceNode = root;
-      int GreaterOrLess = comparator.compare(inputNodeData, referenceNode.getNodeData());
+      int greaterOrLess = compare(inputNodeData, referenceNode.getNodeData());
 
-      while(GreaterOrLess != 0){
-        GreaterOrLess = comparator.compare(inputNodeData, referenceNode.getNodeData());
-        if(GreaterOrLess < 0){
+      while(greaterOrLess != 0){
+        greaterOrLess = compare(inputNodeData, referenceNode.getNodeData());
+        if(greaterOrLess < 0){
           if(referenceNode.getLeftNode() == null){
             referenceNode.setLeftNode(new Node());
             adjustTreeAfterAdd(referenceNode.getLeftNode());
@@ -192,7 +190,7 @@ public class RedBlackTree{
   
   private Node nodeContaining(int data){
 	for(Node n = root; n != null;){
-		int comparisonResult = comparator.compare(data, n.getNodeData());
+		int comparisonResult = compare(data, n.getNodeData());
 		if(comparisonResult == 0){
 			return n;
 		}else if(comparisonResult < 0){
@@ -202,6 +200,10 @@ public class RedBlackTree{
 		}
 	}
 	return null;
+  }
+  
+  private int compare(int int1, int int2){
+	  return int1 == int2 ? 0 : int1 > int2 ? 1 : -1; 
   }
   
 }
